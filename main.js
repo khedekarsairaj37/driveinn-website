@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function generateMenuItems(category, count) {
         const items = [];
         for (let i = 1; i <= count; i++) {
-            const price = (Math.random() * 10 + 5).toFixed(2);
+            // Generate random price between 199 and 599 INR
+            const price = Math.round(Math.random() * 400) + 199;
             let name = '', description = '';
             switch (category) {
                 case 'appetizers':
@@ -61,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="bg-gradient-to-br from-white to-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:scale-102 border border-gray-100">
                     <div class="flex justify-between items-center mb-3">
                         <h4 class="text-xl md:text-2xl font-semibold text-gray-800">${item.name}</h4>
-                        <span class="text-orange-600 text-lg md:text-xl font-bold">$${item.price}</span>
+                        <span class="text-orange-600 text-lg md:text-xl font-bold">₹${item.price}.00</span>
                     </div>
                     <p class="text-gray-600 text-base">${item.description}</p>
                 </div>
